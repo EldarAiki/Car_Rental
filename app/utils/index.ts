@@ -1,4 +1,5 @@
 import { CarProps, FilterProps } from "../types";
+require('dotenv').config()
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
     const basePricePerDay = 50; // Base rental price per day in dollars
@@ -35,7 +36,9 @@ export const generateCarImageUrl = ( car : CarProps, angle? : string) => {
     const url = new URL('https://cdn.imagin.studio/getimage')
     const { make, year, model} = car
 
-    url.searchParams.append('customer', 'hrjavascript-mastery')
+    const key = process.env.CDN
+
+    url.searchParams.append('customer', key)
     url.searchParams.append('make', make)
     url.searchParams.append('modelFamily', model.split(' ')[0])
     url.searchParams.append('zoonType', 'fullscreen')
