@@ -10,6 +10,8 @@ import { fuels, yearsOfProduction } from './constants'
 import ShowMore from './components/ShowMore'
 
 
+// in order to bypass the scroll reset issue 
+
 export default async function Home({searchParams}) {
 
   const allCars = await fetchCars({
