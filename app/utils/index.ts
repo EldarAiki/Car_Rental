@@ -37,8 +37,10 @@ export const generateCarImageUrl = ( car : CarProps, angle? : string) => {
     const { make, year, model} = car
 
     const key = process.env.NEXT_PUBLIC_CDN
+    const cdn = process.env.CDN2
 
-    url.searchParams.append('customer', key || 'hrjavascript-mastery')
+    // url.searchParams.append('customer', 'hrjavascript-mastery')
+    url.searchParams.append('customer', key || cdn)
     url.searchParams.append('make', make)
     url.searchParams.append('modelFamily', model.split(' ')[0])
     url.searchParams.append('zoonType', 'fullscreen')
