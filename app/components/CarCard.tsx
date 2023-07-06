@@ -38,7 +38,7 @@ const CarCard = ({ car }: carCardProps) => {
                 
             </p>
             <div className="relative w-full h-40 my-3 object-contain">
-                <Image src='https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/homepage/families-gallery/2023/revuelto/revuelto_m.png' alt="car model" 
+                <Image src={generateCarImageUrl(car)} alt="car model" 
                 fill priority className="object-contain"/> 
             </div>
             <div className="relative flex w-full mt-2">
